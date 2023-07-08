@@ -1,0 +1,70 @@
+box shadow
+inset property
+rgba->red green blue alpha(opacity)
+::before->The ::before selector inserts something before the content of each selected element(s).
+                Use the content property to specify the content to insert.
+                Use the ::after selector to insert something after the content.
+HTML->
+            <span style="--i:1;"><b>1</b></span>
+            <span style="--i:2;"><b>2</b></span>
+            <span style="--i:3;"><b>3</b></span>
+            <span style="--i:4;"><b>4</b></span>
+            <span style="--i:5;"><b>5</b></span>
+            <span style="--i:6;"><b>6</b></span>
+            <span style="--i:7;"><b>7</b></span>
+            <span style="--i:8;"><b>8</b></span>
+            <span style="--i:9;"><b>9</b></span>
+            <span style="--i:10;"><b>10</b></span>
+            <span style="--i:11;"><b>11</b></span>
+            <span style="--i:12;"><b>12</b></span>
+CSS->
+            .box{
+                position: relative;
+                background: #2f363e;
+                /* min-height: 300px; */
+                border-radius:20px;
+                border-top-left-radius: 225px;
+                border-top-right-radius: 225px;
+                box-shadow: 25px 25px 75px rgba(0,0,0,0.75),
+                10px 10px 70px rgba(0,0,0,0.25),
+                inset 5px 5px 10px rgba(0,0,0,0.5),
+                inset 5px 5px 20px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(0,0,0,0.75);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+
+            }
+            .clock{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                height:450px;
+                width: 450px;
+                border-radius: 100px;
+                background-color:#2f363e;
+                border-radius: 50%;
+                box-shadow: 10px 10px 70px rgba(0,0,0,0.25),
+                inset 5px 5px 10px rgba(0,0,0,0.5),
+                inset 5px 5px 20px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(0,0,0,0.75);
+                margin-bottom: 30px;
+            }
+            .clock::before{
+                content: '';
+                position: absolute;
+                height: 8px;
+                width: 8px;
+                background: #2f363e;
+                border: 3px solid #fff;
+                border-radius: 50%;
+            }
+            .clock span{
+                position: absolute;
+                inset: 20px;
+                color:#fff;
+                text-align: center;
+                transform: rotate(calc(30deg*var(--i)));
+            }
